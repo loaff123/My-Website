@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('info')">Info</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('blog')">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主页 -->
+    <section id="home" class="section">
+        <h1>Welcome to My Website</h1>
+        <p>Hi, I'm Siyan Zhao.</p>
+    </section>
+
+    <!-- 项目 -->
+    <section id="projects" class="section" style="display: none;">
+        <h1>My Projects</h1>
+        <p>Some cool projects.</p>
+    </section>
+
+    <!-- 个人信息 -->
+    <section id="info" class="section" style="display: none;">
+        <h1>About Me</h1>
+        <p>Information about me.</p>
+    </section>
+
+    <!-- 博客 -->
+    <section id="blog" class="section" style="display: none;">
+        <h1>Blog</h1>
+        <div id="blog-list">
+            <!-- 动态加载博客内容 -->
+        </div>
+    </section>
+    
+    <script>
+        // 假设这些是从服务器或数据库获取的博客数据
+        const blogData = [
+            {
+                title: "人生是为了什么？",
+                date: "04-03-2025",
+                fullContent: "玩游戏？性生活？全球旅行？还是作出一番伟大的事业？首先先声明一下，我觉得人死后是不会有任何差别的，或者说我不知道会有什么差别，所以我不考虑死后的人生是什么样的。",
+                link: "blog1.html"  // 指向该博客的完整页面
+            },
+            {
+                title: "2",
+                date: "01-03-2025",
+                fullContent: "This is the full content of my first blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec efficitur urna. Curabitur scelerisque ultricies eros, at aliquam risus vehicula eu. Aliquam erat volutpat. Integer ornare, felis at volutpat facilisis, neque enim iaculis risus, eget cursus turpis sapien sit amet lorem. Proin viverra fermentum auctor. Integer ut massa ac erat tempus viverra. Donec varius enim non dui suscipit elementum. Integer volutpat, velit vel feugiat elementum, neque mi sollicitudin dolor, ac euismod lorem magna eu nunc. Phasellus ac ligula felis. Nam ac velit sit amet ligula posuere vulputate eu vel purus. Etiam fermentum elit et mauris auctor, a lacinia dolor varius.",
+                link: "blog2.html"  // 指向该博客的完整页面
+            }
+            // 可以继续添加更多博客文章
+        ];
+    
+        // 渲染博客内容
+        function loadBlogs() {
+            const blogListContainer = document.getElementById('blog-list');
+            blogData.forEach(blog => {
+                const blogPost = document.createElement('div');
+                blogPost.classList.add('blog-post');
+    
+                const title = document.createElement('h2');
+                const titleLink = document.createElement('a');
+                titleLink.href = blog.link;  // 跳转到完整文章页面
+                titleLink.innerText = blog.title;
+                title.appendChild(titleLink);
+                
+                const date = document.createElement('p');
+                date.innerText = `Published on: ${blog.date}`;
+                
+                // 显示前 200 个字符作为简介
+                const summary = document.createElement('p');
+                summary.innerText = blog.fullContent.substring(0, 200) + '...';  // 截取前 200 字
+    
+                blogPost.appendChild(title);
+                blogPost.appendChild(date);
+                blogPost.appendChild(summary);
+    
+                blogListContainer.appendChild(blogPost);
+            });
+        }
+    
+        // 调用加载博客内容的函数
+        loadBlogs();
+    </script>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

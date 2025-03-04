@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+pfdasf {
+    white-space: pre-wrap; /* 自动换行 */
+    text-align: left; /* 左对齐 */
+    margin: 0; /* 去掉默认外边距 */
+    padding-left: 20px; /* 设置左侧内边距，适当调整数值 */
+}
+
+nav {
+    background: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.section {
+    padding: 50px;
+}
+
+.project {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
