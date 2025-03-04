@@ -48,17 +48,30 @@
         // 假设这些是从服务器或数据库获取的博客数据
         const blogData = [
             {
-                title: "人生是为了什么？",
+                title: "工作",
                 date: "04-03-2025",
+                fullContent: "怎么感觉做工作像是个螺丝钉呢？哪里需要我们就去做什么，从开发转到aws，到时候怕被ai淘汰了，是不是还需要转到ai，",
+                link: "blog2.html"  // 指向该博客的完整页面
+            },
+            {
+                title: "人生是为了什么？",
+                date: "01-03-2025",
                 fullContent: "玩游戏？性生活？全球旅行？还是作出一番伟大的事业？首先先声明一下，我觉得人死后是不会有任何差别的，或者说我不知道会有什么差别，所以我不考虑死后的人生是什么样的。",
                 link: "blog1.html"  // 指向该博客的完整页面
             },
             {
-                title: "2",
-                date: "01-03-2025",
-                fullContent: "This is the full content of my first blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec efficitur urna. Curabitur scelerisque ultricies eros, at aliquam risus vehicula eu. Aliquam erat volutpat. Integer ornare, felis at volutpat facilisis, neque enim iaculis risus, eget cursus turpis sapien sit amet lorem. Proin viverra fermentum auctor. Integer ut massa ac erat tempus viverra. Donec varius enim non dui suscipit elementum. Integer volutpat, velit vel feugiat elementum, neque mi sollicitudin dolor, ac euismod lorem magna eu nunc. Phasellus ac ligula felis. Nam ac velit sit amet ligula posuere vulputate eu vel purus. Etiam fermentum elit et mauris auctor, a lacinia dolor varius.",
-                link: "blog2.html"  // 指向该博客的完整页面
-            }
+                title: "喜欢就是一切？",
+                date: "04-12-2024",
+                fullContent: "为什么人要赚钱呢?就做自己喜欢的事情不行吗？我就喜欢旅游，见识不同的风景，那我就可以一直旅游吗?",
+                link : "blog3.html"  // 指向该博客的完整页面
+            },
+            {
+                title: "有限与无限",
+                date: "16-07-2024",
+                fullContent: "夏虫不可以于冰者，笃于时也。",
+                link: "blog4.html"  // 指向该博客的完整页面
+            },
+
             // 可以继续添加更多博客文章
         ];
     
@@ -80,7 +93,7 @@
                 
                 // 显示前 200 个字符作为简介
                 const summary = document.createElement('p');
-                summary.innerText = blog.fullContent.substring(0, 200) + '...';  // 截取前 200 字
+                summary.innerText = blog.fullContent.substring(0, 20) + '...';  // 截取前 20 字
     
                 blogPost.appendChild(title);
                 blogPost.appendChild(date);
